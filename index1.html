@@ -1,0 +1,157 @@
+<!-- index1.html -->
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Портфолио | Работы</title>
+    <link rel="stylesheet" href="style/style1.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;400;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="header">
+        <div class="container nav-container">
+            <div class="logo">Портфолио</div>
+
+            <nav>
+                <ul class="nav-list">
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="index1.html" class="active">Портфолио</a></li>
+                    <li><a href="index2.html">О себе</a></li>
+                    <li><a href="index3.html">Контакты</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="portfolio-page">
+        <section class="portfolio-hero">
+            <div class="container">
+                <div class="portfolio-hero-content">
+                    <h1>Портфолио</h1>
+                    <p>Избранные работы и проекты</p>
+                </div>
+
+                <div class="filters-wrap">
+                    <button class="filter-btn active" data-filter="all">Все</button>
+                    <button class="filter-btn" data-filter="edits">Эдиты</button>
+                    <button class="filter-btn" data-filter="film">Короткометражный фильм</button>
+                    <button class="filter-btn" data-filter="montage">Монтаж</button>
+                    <button class="filter-btn" data-filter="motion">Моушен</button>
+                    <button class="filter-btn" data-filter="ad">Реклама</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="portfolio-section">
+            <div class="container">
+                <div class="portfolio-grid" id="portfolio-grid">
+
+                    <a href="indexvideo1.html" class="portfolio-card" data-category="edits">
+                        <div class="card-preview">
+                            <img src="image/vid1.jpg" alt="CapCut edit">
+                        </div>
+                        <div class="card-info">
+                            <span class="card-type">Эдиты</span>
+                            <h3>CapCut edit</h3>
+                        </div>
+                    </a>
+
+                    <a href="indexvideo2.html" class="portfolio-card" data-category="film">
+                        <div class="card-preview">
+                            <img src="image/vid2.jpg" alt="Воля случая">
+                        </div>
+                        <div class="card-info">
+                            <span class="card-type">Короткометражный фильм</span>
+                            <h3>Воля случая</h3>
+                        </div>
+                    </a>
+
+                    <a href="indexvideo3.html" class="portfolio-card" data-category="ad">
+                        <div class="card-preview">
+                            <img src="image/vid3.jpg" alt="3D анимация">
+                        </div>
+                        <div class="card-info">
+                            <span class="card-type">Реклама</span>
+                            <h3>3D анимация</h3>
+                        </div>
+                    </a>
+
+                    <a href="indexvideo4.html" class="portfolio-card" data-category="motion">
+                        <div class="card-preview">
+                            <img src="image/vid4.jpg" alt="Моушн анимация">
+                        </div>
+                        <div class="card-info">
+                            <span class="card-type">Моушен</span>
+                            <h3>Моушн анимация</h3>
+                        </div>
+                    </a>
+
+                    <a href="indexvideo5.html" class="portfolio-card" data-category="montage">
+                        <div class="card-preview">
+                            <img src="image/vid5.jpg" alt="Монтаж видео">
+                        </div>
+                        <div class="card-info">
+                            <span class="card-type">Монтаж</span>
+                            <h3>Монтаж видео</h3>
+                        </div>
+                    </a>
+
+                    <a href="indexvideo6.html" class="portfolio-card" data-category="edits">
+                        <div class="card-preview">
+                            <img src="image/vid6.jpg" alt="TikTok edit">
+                        </div>
+                        <div class="card-info">
+                            <span class="card-type">Эдиты</span>
+                            <h3>TikTok edit</h3>
+                        </div>
+                    </a>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Навигация</h4>
+                    <ul>
+                        <li><a href="index.html">Главная</a></li>
+                        <li><a href="index1.html">Портфолио</a></li>
+                        <li><a href="index2.html">О себе</a></li>
+                        <li><a href="index4.html">Контакты</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Контакты</h4>
+                    <p class="footer-text">+7-999-111-111-21</p>
+                    <p class="footer-text">roomtv@yandex.ru</p>
+
+                    <h4 class="social-title">Мы в соц сетях</h4>
+                    <div class="social-icons">
+                       <a href="https://vk.com/ilyamashichev"><img src="image/vk.jpg" alt="VK"></a>
+                        <a href="https://www.tiktok.com/@ne_vse_domaaa"><img src="image/tiktok.jpg" alt="TikTok"></a>
+                        <a href="https://web.telegram.org/k/"><img src="image/tg.jpg" alt="TG"></a>
+                    </div>
+                </div>
+
+                <div class="footer-col footer-art">
+                    <img src="image/laptop-art.jpg" alt="Laptop art">
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <span class="fb-left">Все совпадения случайны</span>
+                <span class="fb-center">Все имена придуманы</span>
+                <span class="fb-right">(С)Илья Машичев</span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="java/script1.js"></script>
+</body>
+</html>

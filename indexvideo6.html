@@ -1,0 +1,176 @@
+<!-- indexvideo1.html -->
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Портфолио | CapCut edit</title>
+    <link rel="stylesheet" href="style/stylevideo1.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;400;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="header">
+        <div class="container nav-container">
+            <div class="logo">Портфолио</div>
+
+            <nav>
+                <ul class="nav-list">
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="index1.html" class="active">Портфолио</a></li>
+                    <li><a href="index2.html">О себе</a></li>
+                    <li><a href="index3.html">Контакты</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="project-page">
+        <section class="project-hero">
+            <div class="container project-container">
+                <a href="index1.html" class="back-link">← Назад к профилю</a>
+
+                <div class="project-head reveal">
+                    <span class="project-category">Эдиты</span>
+                    <h1>TikTok edit</h1>
+                    <p>Видеомонтаж, цветокоррекция, эффекты</p>
+                </div>
+
+                <div class="project-video-wrap reveal">
+                    <video class="project-video" controls poster="image/vid6.jpg">
+                        <source src="video/vid6.mp4" type="video/mp4">
+                        Ваш браузер не поддерживает видео.
+                    </video>
+                </div>
+
+                <div class="project-meta reveal">
+                    <div class="meta-card">
+                        <div class="meta-top">
+                            <span class="meta-icon">✉</span>
+                            <span class="meta-label">Дата</span>
+                        </div>
+                        <div class="meta-value">23.03.2026</div>
+                    </div>
+
+                    <div class="meta-card">
+                        <div class="meta-top">
+                            <span class="meta-icon">👤</span>
+                            <span class="meta-label">Клиент</span>
+                        </div>
+                        <div class="meta-value">Legent</div>
+                    </div>
+
+                    <div class="meta-card">
+                        <div class="meta-top">
+                            <span class="meta-icon">◷</span>
+                            <span class="meta-label">Длительность</span>
+                        </div>
+                        <div class="meta-value">0:21</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="compare-section">
+            <div class="container project-container">
+                <h2 class="section-title reveal">До и После</h2>
+
+                <div class="compare-box reveal" id="compareBox">
+                    <img src="image/vid6.jpg" alt="После" class="compare-img after-img">
+                    <div class="before-layer" id="beforeLayer">
+                        <img src="image/photo_2026-03-23_14-56-50.jpg" alt="До" class="compare-img">
+                    </div>
+
+                    <div class="compare-badge badge-left">До</div>
+                    <div class="compare-badge badge-right">После</div>
+
+                    <input type="range" min="0" max="100" value="50" class="compare-range" id="compareRange">
+                    <div class="compare-line" id="compareLine"></div>
+                    <div class="compare-handle" id="compareHandle">‖</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="project-text-section">
+            <div class="container project-container">
+                <div class="text-grid">
+                    <div class="text-card reveal">
+                        <h2>Задача</h2>
+                        <p>
+                            Создать TikTok-эдит, который привлекает внимание с первых секунд и удерживает интерес за счёт динамики и визуальной подачи
+                        </p>
+                    </div>
+
+                    <div class="text-card reveal">
+                        <h2>Решение</h2>
+                        <p>
+                           Выполнен TikTok-эдит с ритмичным монтажом, эффектами, цветокоррекцией и акцентами под музыку, что сделало ролик ярким и запоминающимся.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="frames-section">
+            <div class="container project-container">
+                <h2 class="section-title reveal">Кадры из проекта</h2>
+
+                <div class="frames-grid">
+                    <div class="frame-card reveal">
+                        <img src="image/photo_2026-03-23_14-56-50.jpg" alt="Кадр 1">
+                    </div>
+
+                    <div class="frame-card reveal">
+                        <img src="image/2026-03-25_01-43-27.png" alt="Кадр 2">
+                    </div>
+
+                    <div class="frame-card reveal">
+                        <img src="image/vid6.jpg" alt="Кадр 3">
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Навигация</h4>
+                    <ul>
+                        <li><a href="index.html">Главная</a></li>
+                        <li><a href="index1.html">Портфолио</a></li>
+                        <li><a href="index2.html">О себе</a></li>
+                        <li><a href="index3.html">Контакты</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Контакты</h4>
+                    <p class="footer-text">+7-999-111-111-21</p>
+                    <p class="footer-text">roomtv@yandex.ru</p>
+
+                    <h4 class="social-title">Мы в соц сетях</h4>
+                    <div class="social-icons">
+                      <a href="https://vk.com/ilyamashichev"><img src="image/vk.jpg" alt="VK"></a>
+                        <a href="https://www.tiktok.com/@ne_vse_domaaa"><img src="image/tiktok.jpg" alt="TikTok"></a>
+                        <a href="https://web.telegram.org/k/"><img src="image/tg.jpg" alt="TG"></a>
+                    </div>
+                </div>
+
+                <div class="footer-col footer-art">
+                    <img src="image/laptop-art.jpg" alt="Laptop art">
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <span class="fb-left">Все совпадения случайны</span>
+                <span class="fb-center">Все имена придуманы</span>
+                <span class="fb-right">(С)Илья Машичев</span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="java/scriptvideo1.js"></script>
+</body>
+</html>
