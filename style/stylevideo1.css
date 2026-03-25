@@ -584,3 +584,55 @@ video {
         padding: 16px 18px;
     }
 }
+
+/* --- НАВИГАЦИЯ МЕЖДУ ПРОЕКТАМИ --- */
+.project-nav-section {
+    padding: 0 0 110px;
+}
+
+.project-nav {
+    max-width: 860px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    gap: 18px;
+}
+
+.project-nav-btn {
+    flex: 1;
+    min-height: 78px;
+    background: var(--card-bg);
+    color: var(--text-white);
+    text-decoration: none;
+    border-radius: 18px;
+    border: 2px solid transparent;
+    padding: 22px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    font-size: 1rem;
+    font-weight: 800;
+    transition: 0.3s;
+}
+
+.project-nav-btn:hover {
+    transform: translateY(-8px);
+    border-color: var(--accent-blue);
+    color: var(--text-white);
+}
+
+.nav-arrow {
+    font-size: 1.2rem;
+    line-height: 1;
+}
+
+@media (max-width: 768px) {
+    .project-nav {
+        flex-direction: column;
+    }
+
+    .project-nav-btn {
+        width: 100%;
+    }
+}
