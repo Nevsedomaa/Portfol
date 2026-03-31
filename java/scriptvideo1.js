@@ -1,4 +1,3 @@
-// java/scriptvideo1.js
 document.addEventListener('DOMContentLoaded', () => {
     const compareRange = document.getElementById('compareRange');
     const beforeLayer = document.getElementById('beforeLayer');
@@ -6,9 +5,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const compareHandle = document.getElementById('compareHandle');
 
     function updateCompare(value) {
-        beforeLayer.style.width = `${value}%`;
-        compareLine.style.left = `${value}%`;
-        compareHandle.style.left = `${value}%`;
+        if (beforeLayer) beforeLayer.style.width = `${value}%`;
+        if (compareLine) compareLine.style.left = `${value}%`;
+        if (compareHandle) compareHandle.style.left = `${value}%`;
     }
 
     if (compareRange && beforeLayer && compareLine && compareHandle) {
@@ -34,4 +33,23 @@ document.addEventListener('DOMContentLoaded', () => {
     revealItems.forEach((item) => {
         revealObserver.observe(item);
     });
+
+    const scrollTopBtn = document.getElementById('scrollTopBtn');
+
+    if (scrollTopBtn) {
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                scrollTopBtn.classList.add('show');
+            } else {
+                scrollTopBtn.classList.remove('show');
+            }
+        });
+
+        scrollTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    }
 });

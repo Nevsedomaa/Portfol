@@ -1,75 +1,92 @@
-// java/script4.js
 document.addEventListener('DOMContentLoaded', () => {
     const form = document.getElementById('contact-form');
     const statusBox = document.getElementById('form-status');
     const submitBtn = document.getElementById('submit-btn');
+    const scrollTopBtn = document.getElementById('scrollTopBtn');
 
     const TELEGRAM_BOT_TOKEN = '8521570875:AAG9GYWR0zBdjSaqoNnacHOEDEn12F4ilrQ';
     const TELEGRAM_CHAT_ID = '551855169';
 
-    if (!form) return;
+    if (form) {
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
 
-    form.addEventListener('submit', async (e) => {
-        e.preventDefault();
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const message = document.getElementById('message').value.trim();
 
-        const name = document.getElementById('name').value.trim();
-        const email = document.getElementById('email').value.trim();
-        const message = document.getElementById('message').value.trim();
+            statusBox.textContent = '';
+            statusBox.className = 'form-status';
 
-        statusBox.textContent = '';
-        statusBox.className = 'form-status';
-
-        if (!name || !email || !message) {
-            statusBox.textContent = 'Заполни все поля.';
-            statusBox.classList.add('error');
-            return;
-        }
-
-        const emailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-        if (!emailValid) {
-            statusBox.textContent = 'Неверный формат почты.';
-            statusBox.classList.add('error');
-            return;
-        }
-
-        submitBtn.disabled = true;
-        submitBtn.textContent = 'Отправка...';
-
-        const text =
-            `📩 Новая заявка с сайта\n\n` +
-            `Имя: ${name}\n` +
-            `Email: ${email}\n` +
-            `Сообщение:\n${message}`;
-
-        try {
-            const response = await fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({
-                    chat_id: TELEGRAM_CHAT_ID,
-                    text: text
-                })
-            });
-
-            const result = await response.json();
-
-            if (result.ok) {
-                statusBox.textContent = 'Сообщение отправлено в Telegram.';
-                statusBox.classList.add('success');
-                form.reset();
-            } else {
-                statusBox.textContent = result.description || 'Ошибка Telegram API.';
+            if (!name || !email || !message) {
+                statusBox.textContent = 'Заполни все поля.';
                 statusBox.classList.add('error');
+                return;
             }
-        } catch (error) {
-            console.error(error);
-            statusBox.textContent = 'Ошибка отправки. Браузер мог заблокировать запрос.';
-            statusBox.classList.add('error');
-        } finally {
-            submitBtn.disabled = false;
-            submitBtn.textContent = 'Отправить';
-        }
-    });
+
+            const emailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+            if (!emailValid) {
+                statusBox.textContent = 'Неверный формат почты.';
+                statusBox.classList.add('error');
+                return;
+            }
+
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Отправка...';
+
+            const text =
+                `📩 Новая заявка с сайта\n\n` +
+                `Имя: ${name}\n` +
+                `Email: ${email}\n` +
+                `Сообщение:\n${message}`;
+
+            try {
+                const response = await fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        chat_id: TELEGRAM_CHAT_ID,
+                        text: text
+                    })
+                });
+
+                const result = await response.json();
+
+                if (result.ok) {
+                    statusBox.textContent = 'Сообщение отправлено в Telegram.';
+                    statusBox.classList.add('success');
+                    form.reset();
+                } else {
+                    statusBox.textContent = result.description || 'Ошибка Telegram API.';
+                    statusBox.classList.add('error');
+                }
+            } catch (error) {
+                console.error(error);
+                statusBox.textContent = 'Ошибка отправки. Браузер мог заблокировать запрос.';
+                statusBox.classList.add('error');
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Отправить';
+            }
+        });
+    }
+
+    if (scrollTopBtn) {
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                scrollTopBtn.classList.add('show');
+            } else {
+                scrollTopBtn.classList.remove('show');
+            }
+        });
+
+        scrollTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    }
 });

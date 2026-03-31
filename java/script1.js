@@ -1,7 +1,7 @@
-// java/script1.js
 document.addEventListener('DOMContentLoaded', () => {
     const filterButtons = document.querySelectorAll('.filter-btn');
     const cards = document.querySelectorAll('.portfolio-card');
+    const scrollTopBtn = document.getElementById('scrollTopBtn');
 
     function showCards(filter) {
         cards.forEach((card, index) => {
@@ -30,4 +30,21 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     showCards('all');
+
+    if (scrollTopBtn) {
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                scrollTopBtn.classList.add('show');
+            } else {
+                scrollTopBtn.classList.remove('show');
+            }
+        });
+
+        scrollTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    }
 });
